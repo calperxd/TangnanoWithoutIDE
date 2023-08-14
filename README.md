@@ -1,6 +1,6 @@
 # Verilog Project for Tang Nano 9K Board
 
-This repository houses a Verilog project tailored for the Tang Nano 9K FPGA board. The core of this project revolves around a set of scripts for automating the synthesis, placement, and routing of Verilog designs, as well as environment setup and FPGA programming.
+The repository contains a Verilog project specially designed for the Tang Nano 9K FPGA board. Its main objective is to provide automation for synthesizing, placing, and routing Verilog designs. This is achieved using a series of scripts that also facilitate the setup of the development environment and facilitate the FPGA programming process. The two primary scripts are build.sh, which oversees the entire synthesis to bitstream generation, and setenv.sh which handles the FPGA toolchain environment setup. An additional feature is the Docker integration, allowing the encapsulation of the development environment for easy replication and distribution.
 
 ## Repository Structure
 
@@ -12,7 +12,7 @@ This repository houses a Verilog project tailored for the Tang Nano 9K FPGA boar
 ├── Docker
 │   └── Dockerfile      # Dockerfile to set up the development environment
 ├── setenv.sh           # Script to set up the FPGA toolchain environment
-└── src                 # Source folder the script looks for verilog files here
+└── src                 # Source folder the script looks for verilog files here 
 │   └── add.v           # Sample Verilog source file
 ```
 
@@ -57,5 +57,22 @@ Once you have built the docker env now you can set up the necessary tools to syn
 ```
 This script will install the `yosys`, `nextpnr-gowin` and `openFPGAloader` inside the docker.
 
-### Build and flash
+### Synthesizing, Placing, Routing and Flashing
 
+Run the build.sh script without any arguments to trigger the entire flow from synthesis to bitstream generation:
+
+```bash
+./build.sh
+```
+
+To remove all generated files and directories, use:
+
+```bash
+./build.sh clean
+```
+
+After generating the bitstream, flash it to the FPGA board with:
+
+```bash
+./build.sh flash
+```

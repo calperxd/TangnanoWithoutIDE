@@ -4,6 +4,7 @@ This repository houses a Verilog project tailored for the Tang Nano 9K FPGA boar
 
 ## Repository Structure
 
+```
 .
 ├── board
 │ └── tangnano9k.cst # Constraints file for Tang Nano 9K
@@ -13,6 +14,7 @@ This repository houses a Verilog project tailored for the Tang Nano 9K FPGA boar
 ├── setenv.sh # Script to set up the FPGA toolchain environment
 └── src
 └── add.v # Sample Verilog source file
+```
 
 
 ## Scripts Explained
@@ -42,7 +44,18 @@ The `setenv.sh` script sets up the FPGA toolchain environment:
 
 ### Environment Setup
 
-Run the `setenv.sh` script to set up the necessary tools for FPGA development:
+Run the `build.sh` script to set up the docker development environment.
+
+```bash
+./build.sh buildenv
+```
+
+Once you have built the docker env now you can set up the necessary tools to synthesis the FPGA Tangnano9k running the `setenv.sh`.
 
 ```bash
 ./setenv.sh
+```
+This script will install the `yosys`, `nextpnr-gowin` and `openFPGAloader` inside the docker.
+
+### Build and flash
+

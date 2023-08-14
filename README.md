@@ -2,6 +2,13 @@
 
 The repository contains a Verilog project specially designed for the Tang Nano 9K FPGA board. Its main objective is to provide automation for synthesizing, placing, and routing Verilog designs. This is achieved using a series of scripts that also facilitate the setup of the development environment and facilitate the FPGA programming process. The two primary scripts are build.sh, which oversees the entire synthesis to bitstream generation, and setenv.sh which handles the FPGA toolchain environment setup. An additional feature is the Docker integration, allowing the encapsulation of the development environment for easy replication and distribution.
 
+## Requirements
+
+- yosys - https://github.com/YosysHQ/yosys
+- nextpnr-gowin - https://github.com/YosysHQ/nextpnr
+- openFPGAloader - https://github.com/trabucayre/openFPGALoader
+- Docker with root permissions - https://docs.docker.com/engine/install/linux-postinstall/
+
 ## Repository Structure
 
 ```
@@ -13,7 +20,7 @@ The repository contains a Verilog project specially designed for the Tang Nano 9
 │   └── Dockerfile      # Dockerfile to set up the development environment
 ├── setenv.sh           # Script to set up the FPGA toolchain environment
 └── src                 # Source folder the script looks for verilog files here 
-│   └── add.v           # Sample Verilog source file
+    └── add.v           # Sample Verilog source file
 ```
 
 

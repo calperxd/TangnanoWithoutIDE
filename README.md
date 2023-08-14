@@ -7,13 +7,13 @@ This repository houses a Verilog project tailored for the Tang Nano 9K FPGA boar
 ```
 .
 ├── board
-│ └── tangnano9k.cst # Constraints file for Tang Nano 9K
-├── build.sh # Script for synthesis, placement, routing, and more
+│   └── tangnano9k.cst  # Constraints file for Tang Nano 9K
+├── build.sh            # Script for synthesis, placement, routing, and more
 ├── Docker
-│ └── Dockerfile # Dockerfile to set up the development environment
-├── setenv.sh # Script to set up the FPGA toolchain environment
-└── src
-└── add.v # Sample Verilog source file
+│   └── Dockerfile      # Dockerfile to set up the development environment
+├── setenv.sh           # Script to set up the FPGA toolchain environment
+└── src                 # Source folder the script looks for verilog files here
+│   └── add.v           # Sample Verilog source file
 ```
 
 

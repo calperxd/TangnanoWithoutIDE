@@ -60,7 +60,8 @@ case "$1" in
             exit 1
         fi
         echo "Flashing..."
-        openFPGALoader -f -b tangnano9k $BITSTREAM
+        openFPGALoader --list-cables
+        openFPGALoader -m -b tangnano9k $BITSTREAM
         echo "Flashed"
         ;;
     *)
